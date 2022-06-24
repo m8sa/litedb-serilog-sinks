@@ -8,6 +8,10 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <IsPackable>false</IsPackable>
+    <ApplicationIcon>IconFile.ico</ApplicationIcon>
+    <FileVersion>1.1.1.1</FileVersion>
+    <AssemblyVersion>1.1.1.1</AssemblyVersion>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>

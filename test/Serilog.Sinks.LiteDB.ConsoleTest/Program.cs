@@ -20,7 +20,7 @@ namespace Serilog.Sinks.LiteDB.ConsoleTest
         public static void TestQuarterly()
         {
             const RollingPeriod period = RollingPeriod.Quarterly;
-            
+
             var expected = "filename=c:\\tmp\\file_1950-01-12-1000.db";
             var file = FileRoller.GetFilename(connStr, period, new DateTime(1950, 01, 12, 10, 4, 0));
             Debug.Assert(expected == file);
@@ -99,19 +99,19 @@ namespace Serilog.Sinks.LiteDB.ConsoleTest
             {
                 var result1 = db.GetCollection("log").FindOne(Query.Contains("_m", "TEST"));
                 Console.WriteLine(result1.ToString());
-                Console.WriteLine("");
+                Console.WriteLine(string.Empty);
 
                 var result2 = db.GetCollection("log").Find(Query.EQ("app", "Serilog.Sinks.LiteDB.ConsoleTest"));
                 Console.WriteLine(result2.Count());
-                Console.WriteLine("");
+                Console.WriteLine(string.Empty);
 
                 var result3 = db.GetCollection("log").Find(Query.GTE("nummer", 100));
                 Console.WriteLine(result3.Count());
-                Console.WriteLine("");
+                Console.WriteLine(string.Empty);
 
                 var result4 = db.GetCollection("log").Find(Query.GTE("date", DateTime.Now.AddHours(-1)));
                 Console.WriteLine(result4.Count());
-                Console.WriteLine("");
+                Console.WriteLine(string.Empty);
 
                 //Console.WriteLine(db.Run("db.info").ToString());
 
@@ -124,7 +124,7 @@ namespace Serilog.Sinks.LiteDB.ConsoleTest
                 ));
 
                 var a = db.GetCollection("log").Find(Query.All(), 0, 10);
-                foreach(var a1 in a)
+                foreach (var a1 in a)
                 {
                     var jsonString = JsonSerializer.Serialize(a1);//, true);
                     Console.WriteLine(jsonString);
